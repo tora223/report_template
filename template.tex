@@ -1,0 +1,146 @@
+\documentclass[a4paper, 11pt]{jarticle}
+\usepackage[margin=20truemm]{geometry}
+\usepackage{amsmath}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage[dvipdfmx]{color}
+\usepackage{float}
+\usepackage{listings,jvlisting}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{siunitx}
+\usepackage{longtable}
+\lstset{
+basicstyle={\ttfamily},
+identifierstyle={\small},
+commentstyle={\smallitshape},
+keywordstyle={\small\bfseries},
+ndkeywordstyle={\small},
+stringstyle={\small\ttfamily},
+frame={tb},
+breaklines=true,
+columns=[l]{fullflexible},
+numbers=left,
+xrightmargin=0zw,
+xleftmargin=3zw,
+numberstyle={\scriptsize},
+stepnumber=1,
+numbersep=1zw,
+lineskip=-0.5ex
+}
+
+\newcommand{\bhline}[1]{\noalign{\hrule height #1}} 
+\newcolumntype{I}{!{\vrule width 1.5pt}}
+\newcounter{year}
+\newcounter{month}
+\newcounter{day}
+\newcounter{temp}
+\newcounter{num}
+
+
+
+% Userの情報を入力
+\newcommand{\majorsubject}{} % 学科
+\newcommand{\classuniv}{} % クラス
+\setcounter{num}{0} % 学籍番号
+\newcommand{\username}{} % 氏名
+\newcommand{\daytoday}{} % 何曜日の実験か
+\newcommand{\timestoday}{} % 午前か午後か
+
+% 実験当日の情報を入力
+\setcounter{year}{2000} % 実験年
+\setcounter{month}{1} % 実験月
+\setcounter{day}{1} % 実験日
+\newcommand{\topicexp}{} % 実験内容
+\newcommand{\temp}{} % 室温
+\newcommand{\humd}{} % 湿度
+\newcommand{\press}{} % 気圧
+\newcommand{\teammateone}{} % 共同実験者1 
+\newcommand{\teammatetwo}{} % 共同実験者2 
+\newcommand{\teammatethree}{} % 共同実験者3 
+
+
+
+
+\title{理工学基礎実験レポート} 
+\date{}
+\author{}
+
+
+\begin{document}
+
+
+
+% --------------------------表紙-------------------------------------
+\maketitle
+
+\begin{table}[htbp]
+  \centering
+  \begin{tabularx}{150mm}{|p{30mm}|X|}
+    \hline
+    \multirow{2}{*}{\textbf{実験日}} & \multicolumn{1}{c|}{\multirow{2}{*}{\textbf{\the\value{year}年\the\value{month}月\the\value{day}日 (\daytoday)(\timestoday)}}} \\
+    & \\ \hline
+    \multirow{3}{*}{\textbf{実験題目}} & \multicolumn{1}{c|}{\multirow{3}{*}{{{\Large \textbf{\topicexp}}}}} \\
+    & \\
+    & \\ \hline
+  \end{tabularx}
+\end{table}
+\begin{table}[htbp]
+  \centering
+  \begin{tabularx}{150mm}{Ip{30mm}Ip{30mm}IXIp{10mm}IXIXI}
+    \bhline{2pt}
+    \multirow{2}{*}{\textbf{学科}} & \multirow{2}{*}{\majorsubject} & \multirow{2}{*}{\textbf{クラス}}& \multirow{2}{*}{\textbf{\classuniv}} & \multirow{2}{*}{\textbf{学籍番号}} & \multirow{2}{*}{\the\value{num}} \\ 
+    & & & & & \\ \bhline{2pt}
+    \multirow{3}{*}{\textbf{報告者氏名}} & \multicolumn{5}{cI}{\multirow{3}{*}{{\Large \username}}} \\ 
+    & \multicolumn{5}{cI}{} \\
+    & \multicolumn{5}{cI}{} \\ \bhline{2pt}
+  \end{tabularx}
+\end{table}
+\begin{table}[htbp]
+  \centering
+  \begin{tabularx}{150mm}{|p{40mm}|X|X|}
+    \hline
+    \multirow{4}{*}{\textbf{共同実験者}} & \teammateone &  \\ \cline{2-3}
+    & \teammatetwo & \\ \cline{2-3}
+    & \teammatethree & \\ \cline{2-3}
+    & & \\ \hline
+  \end{tabularx}
+\end{table}
+\begin{table}[H]
+  \centering
+  \scalebox{1}[1.1]{
+    \begin{tabularx}{150mm}{|p{40mm}|X|}
+      \hline
+      \textbf{レポート提出日} & \multicolumn{1}{c|}{\textbf{\today \the\hour 時 \the\minute 分}} \\ \hline
+      \textbf{レポート再提出日} &  \multicolumn{1}{c|}{\textbf{年 \quad 月 \quad 日 \quad 時 \quad 分}} \\ \hline
+      &  \\ \hline
+    \end{tabularx}
+  }
+\end{table}
+\begin{table}[H]
+  \begin{flushleft}
+    \hspace*{7mm}
+    \begin{tabularx}{70mm}{|p{15mm}|X|}
+      \hline
+      \multirow{2}{*}{室温} & \multicolumn{1}{c|}{\multirow{2}{*}{$\temp \: \si{\degreeCelsius} $}}  \\ 
+      & \\ \hline
+      \multirow{2}{*}{湿度} & \multicolumn{1}{c|}{\multirow{2}{*}{$\humd \: \%$}}  \\ 
+      & \\ \hline
+      \multirow{2}{*}{気圧} & \multicolumn{1}{c|}{\multirow{2}{*}{$\press \: \si{\hecto\pascal}$}}  \\ 
+      & \\ \hline
+    \end{tabularx}
+  \end{flushleft}
+\end{table}
+\newpage
+
+% -------------------------------------------------------------------
+
+
+
+\section{目的}
+\section{結論}
+\begin{thebibliography}{10}
+\end{thebibliography}
+
+\end{document}
